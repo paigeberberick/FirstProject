@@ -5,9 +5,13 @@ public class PlayerMove : MonoBehaviour
 { 
     [SerializeField] float moveSpeed = 5f; // Speed of the player movement
     [SerializeField] float rotateSpeed = 120f; // Speed of the player rotation
+    bool iskey = false;
+    SpriteRenderer PlayerRender;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        PlayerRender = GetComponent<SpriteRenderer>();
     }
 
         
@@ -41,5 +45,20 @@ public class PlayerMove : MonoBehaviour
             Debug.Log("Hitting Obstacle");
 
         }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        Debug.Log("Trigger happened");
+        if (other.CompareTag("HHH"))
+        {
+            iskey = true;
+            Debug.Log("You triggered with an object." + other.gameObject.name);
+            Debug.Log(iskey);
+            PlayerRender.color = Color.red;
+            Debug.Log(PlayerRender.color);
+            Destroy(other.gameObject);
+        }
+        
     }
 }
