@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Tree
   - HHH
+  - Package
+  - Customer
   layers:
   - Default
   - TransparentFX

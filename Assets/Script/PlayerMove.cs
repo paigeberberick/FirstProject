@@ -40,7 +40,7 @@ public class PlayerMove : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("Collision happened."+collision.gameObject.name);
-        if (collision.collider.CompareTag("Tree"));
+        if (collision.collider.CompareTag("Obstacle Square"));
         {
             Debug.Log("Hitting Obstacle");
 
